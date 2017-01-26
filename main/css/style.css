@@ -1,0 +1,93 @@
+body
+{
+	overflow: hidden;
+	background: rgba(0,0,0,0);
+	margin: 0;
+	padding: 0;
+}
+
+#disconnect-screen
+{
+/*	display: inline-block; */
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: rgba(0,0,0,.5);
+}
+
+.connected
+{
+	display: none !important;
+}
+
+#display-area
+{
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.timer
+{
+	display: inline-block;
+}
+
+.decimal.hide
+{
+	display: none;
+}
+
+#edit-area
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	padding: .3em;
+	border-bottom: 1px solid #000;
+}
+
+#edit-area *
+{
+	vertical-align: middle;
+}
+
+label
+{
+	display: inline-block;
+}
+
+.edit-label
+{
+	width: 8em;
+	line-height: 2em;
+}
+
+.key-code
+{
+	margin-right: .5em;
+}
+
+.text-input
+{
+	margin-right: .5em;
+}
+
+input[type=color]
+{
+	height: 1.5em;
+}
+
+.count-down-expire-label
+{
+	margin-left: .5em;
+}
+
+#generate-file-div
+{
+	display: block;
+	margin-top: 1em;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='content-type' content='text/html;charset=UTF-8'>
+	<meta name='robots' content='index, follow'>
+	<meta name='description' content='Display a count up/down timer onto browser or OBS browser source with hotkey controls.'>
+	<meta name='author' content='xxdocobxx'>
+	<title>DisplayTimer customize</title>
+	<link rel='shortcut icon' type='image/ico' href='css/favicon.ico'>
+	<link href='css/style.css' rel='stylesheet'>
+</head>
+<body>
+	<div id='edit-area'>
+		<label for='toggle-key' class='edit-label'>Toggle hotkey:</label>
+		<input id='toggle-key' class='key-code' size='5' placeholder='key code'>
+		<label>Alt:<input id='toggle-key-alt' type='checkbox'></label>
+		<label>Ctrl:<input id='toggle-key-ctrl' type='checkbox'></label>
+		<label>Shift:<input id='toggle-key-shift' type='checkbox'></label>
+		<br>
+		<label for='reset-key' class='edit-label'>Reset hotkey:</label>
+		<input id='reset-key' class='key-code' size='5' placeholder='key code'>
+		<label>Alt:<input id='reset-key-alt' type='checkbox'></label>
+		<label>Ctrl:<input id='reset-key-ctrl' type='checkbox'></label>
+		<label>Shift:<input id='reset-key-shift' type='checkbox'></label>
+		<br>
+		<label class='edit-label'>Text:</label>
+		<label>Font: <input id='text-font' class='text-input'></label>
+		<label>Bold:<input id='text-bold' class='text-input' type='checkbox' checked></label>
+		<label>Size: <input id='text-size' class='text-input' type='number' min='5' max='300'></label>
+		<label>Color: <input id='text-color' class='text-input' type='color'></label>
+		<br>
+		<label class='edit-label'>Decimal:<input id='text-decimal' class='text-input' type='checkbox' checked></label>
+		<label>Size: <input id='text-decimal-size' class='text-input' type='number' min='5' max='300'></label>
+		<br>
+		<label class='edit-label'>Count down:<input id='count-down' type='checkbox'></label>
+		<input id='count-down-hour' type='number' min='-1' max='25' placeholder='h'> :
+		<input id='count-down-min' type='number' min='-1' max='61' placeholder='m'> :
+		<input id='count-down-sec' type='number' min='-1' max='61' placeholder='s'>
+		<label class='count-down-expire-label'>Continue when timer expired:<input id='count-down-expire' type='checkbox'></label>
+		<br>
+		<div id='generate-file-div'>
+			<button id='generate-file-btn'>Generate "timer.html"</button>
+			(Place the generated file into the same folder of this app.)
+		</div>
+	</div>
+	<div id='display-area'>
+		<div id='timer' class='timer'>12:34:56</div><div id='timer-decimal-point' class='timer decimal'>.</div><div id='timer-decimal' class='timer decimal'>78</div>
+	</div>
+
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+	<script src='js/custom.js'></script>
+</body>
+</html>
