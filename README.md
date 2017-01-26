@@ -19,6 +19,6 @@ A simply count up/down timer which demonstrate how to make use of [[DisplayKeyst
  3. Generate the `timer.html` file.
  4. Place the generated file into the same folder of this app.
  5. Run the application `KeystrokeServer.exe` and click the `Start` button.
- 6. Open the generated file on the browser of the OBS browser source.
+ 6. Open the generated file on the browser or the OBS browser source.
  7. If you have not set the client ip on the application, you will then receive a request connection from the browser to the application. Otherwise,  the application will auto approve any request from the client ip you have provided.
  8. If you have not set the hotkeys, it will use the default hotkey `Ctrl+1` to start the timer and `Alt+1` to reset the timer.
