@@ -5,7 +5,7 @@ Display a count up/down timer onto browser or OBS browser source with hotkey con
 ![Screenshots](https://github.com/xxdocobxx/DisplayTimer/raw/master/assets/screenshot001.jpg)
 
 ## About
-A simply count up/down timer which make use of [[DisplayKeystroke](https://github.com/xxdocobxx/DisplayKeystroke)]("DisplayKeystroke") to send global hotkeys to the browser.
+A simply count up/down timer which demonstrate how to make use of [[DisplayKeystroke](https://github.com/xxdocobxx/DisplayKeystroke)]("DisplayKeystroke") to send global hotkeys to the browser.
 
 ## Usage
  1. Run the application `KeystrokeServer.exe` and click the `Start` button.
