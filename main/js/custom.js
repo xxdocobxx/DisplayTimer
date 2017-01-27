@@ -88,6 +88,14 @@ $('#toggle-key,#reset-key').on('input', function(e)
 	e.target.value = '';
 });
 
+$('.time-input').on('input', function(e)
+{
+	if(this.valueAsNumber < 0)
+		this.value = parseInt(this.max) - 1;
+	else if(this.valueAsNumber >= parseInt(this.max))
+		this.value = 0;
+});
+
 $('#generate-file-btn').on('click', function(e)
 {
 	var count_down =
