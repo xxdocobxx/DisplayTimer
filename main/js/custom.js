@@ -55,6 +55,39 @@ $('.text-input').on('change', function(e)
 	$('.decimal').toggleClass('hide', !text_decimal);
 });
 
+function onKeyUp(e)
+{
+	var key_code = e.keyCode;
+
+	switch(true)
+	{
+	case (key_code >= 0x10 && key_code <= 0x12): // shift, ctrl, alt
+		return;
+
+	case (key_code >= 0x21 && key_code <= 0x2f):
+		if(key_code === 0x2c || e.location !== KeyboardEvent.DOM_KEY_LOCATION_NUMPAD) // print screen
+			key_code += 0x100;
+		break;
+		
+	case (key_code === 0x6f): // num /
+	case (key_code === 0x90): // num lock
+	case (key_code === 0xd && e.location === KeyboardEvent.DOM_KEY_LOCATION_NUMPAD): // enter
+	case (key_code >= 0x5b && key_code <= 0x5d): // win, app
+		key_code += 0x100;
+		break;
+	}
+	
+	e.target.value = (key_code < 0x10) ? '0' + key_code.toString(16) : key_code.toString(16);
+}
+
+$('#toggle-key')[0].onkeyup = onKeyUp;
+$('#reset-key')[0].onkeyup = onKeyUp;
+
+$('#toggle-key,#reset-key').on('input', function(e)
+{
+	e.target.value = '';
+});
+
 $('#generate-file-btn').on('click', function(e)
 {
 	var count_down =

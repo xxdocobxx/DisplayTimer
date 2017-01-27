@@ -189,12 +189,44 @@ KeystrokeClient.onDisconnect = function()
 	$('#disconnect-screen').removeClass('connected');
 };
 
+var test_key =
+{
+	'2d': '60', // num 0
+	'23': '61', // num 1
+	'28': '62', // num 2
+	'22': '63', // num 3
+	'25': '64', // num 4
+	'0c': '65', // num 5
+	'27': '66', // num 6
+	'24': '67', // num 7
+	'26': '68', // num 8
+	'21': '69', // num 9
+	'2e': '6e', // num .
+
+	'60': '2d', // num 0
+	'61': '23', // num 1
+	'62': '28', // num 2
+	'63': '22', // num 3
+	'64': '25', // num 4
+	'65': '0c', // num 5
+	'66': '27', // num 6
+	'67': '24', // num 7
+	'68': '26', // num 8
+	'69': '21', // num 9
+	'6e': '2e', // num .
+	
+	test: function(key, key_code)
+	{
+		return (key === key_code || (this.hasOwnProperty(key_code) && key === this[key_code]));
+	},
+}
+
 KeystrokeClient.onKeyDown = function(key_code, modifier)
 {
-	if(hotkey_toggle.key === key_code && KeystrokeClient.testModifierKeys(hotkey_toggle.alt, hotkey_toggle.ctrl, hotkey_toggle.shift))
+	if(test_key.test(hotkey_toggle.key, key_code) && KeystrokeClient.testModifierKeys(hotkey_toggle.alt, hotkey_toggle.ctrl, hotkey_toggle.shift))
 		toggleTimer();
 
-	if(hotkey_reset.key === key_code && KeystrokeClient.testModifierKeys(hotkey_reset.alt, hotkey_reset.ctrl, hotkey_reset.shift))
+	if(test_key.test(hotkey_reset.key, key_code) && KeystrokeClient.testModifierKeys(hotkey_reset.alt, hotkey_reset.ctrl, hotkey_reset.shift))
 		resetTimer();
 };
 
